@@ -1,0 +1,94 @@
+Selenium Setup - Dependencies added in pom.xml
+ 
+Know about the locators
+ * locators in selenium
+ * id - unique attribute
+ * name - name attribute - name of the element
+ * classname - common class name applied for multiple elements  grouped together
+ * linktext - text present on the link
+ * partial link text - partial link text text on the web element
+ * tagname - the first word in the web element after the opening tag - this is applied for mutlipel web elements in the page
+ * css selector - #name
+ * div.oxd-form-row:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)
+Example - 
+radio - index xpath - //input[@type='radio']
+checkbox - index path - //input[@type='checkbox']
+
+Selenium Classwork Summary
+1. Starting with Selenium in Maven (Java Project)
+Set up a Maven project in IntelliJ.
+
+Added Selenium and WebDriverManager dependencies in pom.xml.
+
+Wrote the first automation script to launch Chrome browser.
+
+2. Understanding Locators
+Learned how to identify elements using:
+
+id, name, className, tagName, cssSelector, xpath
+
+Used these locators to find elements on a webpage.
+
+3. Automating a Login Page
+Automated entering username and password using sendKeys().
+
+Clicked login button using click().
+
+Applied locators to perform actions on login form.
+
+4. Browser Navigation Commands
+Used Selenium navigation methods:
+
+navigate().to("URL") – open URL
+
+navigate().back() – go back to previous page
+
+navigate().forward() – move forward
+
+navigate().refresh() – refresh the page
+
+5. Browser Commands
+Retrieved useful browser information:
+
+getTitle() – get the page title
+
+getCurrentUrl() – get current URL
+
+getPageSource() – get HTML source code
+
+close() – close current browser window
+
+quit() – close all browser windows
+
+6. Handling Dropdowns (Select Class)
+Used Select class to automate <select> dropdowns.
+
+Methods used:
+
+selectByVisibleText()
+
+selectByValue()
+
+selectByIndex()
+
+7. Handling Alerts
+Automated alert popups (JavaScript alerts).
+
+Used:
+
+driver.switchTo().alert().accept() – accept alert
+
+driver.switchTo().alert().dismiss() – cancel alert
+
+driver.switchTo().alert().getText() – read alert message
+
+driver.switchTo().alert().sendKeys() – input in prompt alert
+
+8. Practice Links Provided by Mam
+Received practice websites or links from Mam to test:
+Practiced automation on real or dummy test sites.
+Some links - 
+https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers
+https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php
+https://rahulshettyacademy.com/AutomationPractice/
+https://the-internet.herokuapp.com/javascript_alerts

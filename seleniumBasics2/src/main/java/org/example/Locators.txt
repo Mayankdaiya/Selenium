@@ -1,0 +1,32 @@
+1. By.id() – Most reliable (if present)
+WebElement username = driver.findElement(By.id("username"));
+
+2. By.name() – Common in forms
+WebElement email = driver.findElement(By.name("email"));
+
+3. By.className() – For simple single-class elements
+driver.findElement(By.className("className"));
+
+4. By.tagName() – For elements like h1, p, a, etc.
+driver.findElement(By.tagName("h1"));
+
+5. By.linkText() – Only for full visible text of <a> tags
+driver.findElement(By.linkText("Click here"));
+
+6. By.partialLinkText() – Matches part of link text
+driver.findElement(By.partialLinkText("Click"));
+
+7. By.cssSelector() – Very flexible
+driver.findElement(By.cssSelector("div#login input[type='text']"));
+#id            --> element with specific ID
+.class         --> element with class
+tag[attr='val'] --> element with attribute
+
+8. By.xpath() – Most powerful, handles complex DOM
+driver.findElement(By.xpath("//input[@id='username']"));
+
+//h1                   --> any <h1> element
+//div[@id='main']      --> div with id=main
+//input[@type='checkbox'] --> all checkboxes
+//div[@id='main']//h1  --> h1 inside div with id=main
+//button[text()='Login'] --> button with visible text

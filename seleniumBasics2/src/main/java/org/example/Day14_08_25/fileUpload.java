@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Day14_08_25;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,21 +6,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.List;
-
-public class MultiCheckbox {
+public class fileUpload {
     public static void main(String[] args) throws InterruptedException {
         // WebDriverManager.chromedriver().setup();
         ChromeOptions chromeopt = new ChromeOptions();
         WebDriver driver = new ChromeDriver(chromeopt);
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        driver.get("https://the-internet.herokuapp.com/upload");
 
         Thread.sleep(2500);
-
-        List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-        for(WebElement w:checkboxes){
-            w.click();
-        }
-        System.out.println( "Hello World!" );
+        WebElement fileupload = driver.findElement(By.xpath("//input[@id='file-upload']"));
+        fileupload.sendKeys("C:\\Users\\Mayank\\Downloads\\logocss.gif");
+        Thread.sleep(1000);
+        WebElement submit = driver.findElement(By.xpath("//input[@id='file-submit']"));
+        submit.click();
     }
 }

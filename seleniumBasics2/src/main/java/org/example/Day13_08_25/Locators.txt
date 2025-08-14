@@ -30,3 +30,24 @@ driver.findElement(By.xpath("//input[@id='username']"));
 //input[@type='checkbox'] --> all checkboxes
 //div[@id='main']//h1  --> h1 inside div with id=main
 //button[text()='Login'] --> button with visible text
+
+Dynamic Elements: xpath
+1. Using and Operator
+//TagName[@Att1='Value1' and @Att2='Value2']
+//TagName[@Att='Value' and Text()='Value']
+
+2. Using or Operator
+//TagName[@Att1='Value1' OR @Att2='Value2']
+//TagName[@Att='Value' OR Text()='Value']
+
+3. Using contains
+//TagName[contains(@Att, 'Partial Value')]
+//TagName[contains(text(), 'Partial Value')]
+
+4. Using starts-with
+//TagName[starts-with(@Att, 'Starting Value')]
+//TagName[starts-with(text(), 'Starting Value')]
+
+5. Hybrid
+//TagName[contains(@Att1, 'Partial Value') and starts-with(text(), 'Starting Value')]
+//TagName[contains(@Att1, 'Partial Value') or starts-with(@Att2, 'Starting Value')]

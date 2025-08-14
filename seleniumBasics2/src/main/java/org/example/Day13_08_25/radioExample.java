@@ -1,5 +1,4 @@
-package org.example;
-import io.github.bonigarcia.wdm.WebDriverManager;
+package org.example.Day13_08_25;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

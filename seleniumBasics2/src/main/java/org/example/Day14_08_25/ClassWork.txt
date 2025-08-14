@@ -1,0 +1,76 @@
+1. Navigation Commands -> Used to navigate between pages or browser history.
+
+driver.get("URL") – Opens a web page.
+driver.navigate().to("URL") – Alternative to .get().
+driver.navigate().back() – Goes back to the previous page.
+driver.navigate().forward() – Goes to the next page in history.
+driver.navigate().refresh() – Reloads the current page.
+
+2. Page Details Commands -> Used to fetch information about the current page.
+
+driver.getTitle() – Gets the page title.
+driver.getCurrentUrl() – Gets the current page URL.
+driver.getPageSource() – Returns the HTML source of the page.
+
+3. Mouse Hover -> Used to move the mouse pointer over an element (e.g., menu).
+
+Actions actions = new Actions(driver);
+actions.moveToElement(element).perform();
+
+4. File Upload -> Used to upload files using input fields with type="file".
+
+WebElement upload = driver.findElement(By.id("uploadFile"));
+upload.sendKeys("C:\\path\\to\\file.txt");
+
+5. File Download -> used to download files
+
+Triggered by clicking a download link or button.
+Click download button or link: driver.findElement(By.id("downloadBtn")).click();
+Can verify file with file system checks (outside Selenium).
+
+6. Drag and Drop -> Used to drag an element and drop it on another.
+
+Actions actions = new Actions(driver);
+actions.dragAndDrop(source, target).perform();
+
+7. Date Picker -> Used to select a date from a calendar widget.
+
+Send a date directly:
+dateInput.sendKeys("08/14/2025");
+Or click through calendar UI using locators for month, date, etc.
+
+8. Move to Element
+
+Scrolls or moves to a specific element on the page.
+actions.moveToElement(element).perform();
+
+9. Actions Class -> Performs advanced user interactions:
+
+Keyboard: keyDown(), keyUp(), sendKeys()
+Mouse: moveToElement(), click(), doubleClick(), dragAndDrop()
+Actions act = new Actions(driver);
+act.moveToElement(element).click().perform();
+
+Lab Session Tasks
+
+1. Automating Student Registration Form
+
+Filled out form fields: name, email, gender, etc.
+Uploaded files (photo/documents).
+Submitted the form.
+Used XPath, sendKeys(), dropdown handling, etc.
+
+2. Practice Page Website Automation
+
+Practiced interacting with:
+Buttons
+Alerts
+Dropdowns
+Links
+Used different locators and wait conditions.
+
+3. Mouse Hover Practice
+
+Hovered over menus/submenus.
+Used Actions.moveToElement().
+Validated visibility or clickability of dropdown items after hover.

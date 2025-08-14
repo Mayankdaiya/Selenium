@@ -1,14 +1,12 @@
-package org.example;
+package org.example.Day13_08_25;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
 
-
-public class dropdownExample {
+public class checkboxExample {
     public static void main(String[] args) throws InterruptedException {
         // WebDriverManager.chromedriver().setup();
         ChromeOptions chromeopt = new ChromeOptions();
@@ -17,13 +15,11 @@ public class dropdownExample {
 
         Thread.sleep(2500);
 
-        WebElement dropdown = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
-        Select select = new Select(dropdown);
-        Thread.sleep(2000);
-        select.selectByVisibleText("Option1");
-        Thread.sleep(2000);
-        select.selectByValue("option2");
+        WebElement checkbox1 = driver.findElement(By.xpath("//input[@id='checkBoxOption1']"));
+        WebElement checkbox2 = driver.findElement(By.xpath("//input[@id='checkBoxOption2']"));
 
+        checkbox1.click();
+        checkbox2.click();
         System.out.println( "Hello World!" );
     }
 }

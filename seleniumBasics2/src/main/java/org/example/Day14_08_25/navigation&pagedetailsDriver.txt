@@ -1,0 +1,20 @@
+1. driver.navigate().to(String url)
+   navigate to the url
+2. driver.navigate().back()
+   navigate to back
+3. driver.navigate().forward()
+   navigate to forward
+4. driver.navigate().refresh()
+   navigate to refresh
+5. driver.get(String url)
+   open the url
+6. driver.getCurrentUrl()
+   get the current url
+7. driver.getTitle()
+   get the title of site 
+8. driver.getPageSource()
+   get the pagesource code 
+9. driver.manage().timeouts().implicitlyWait(Duration duration)
+   Sets an implicit wait time for navigation operations (e.g., wait for elements to load after navigation).
+10. driver.getWindowHandle() 
+    list all the window handles with unique id

@@ -40,5 +40,13 @@
       <artifactId>webdrivermanager</artifactId>
       <version>5.8.0</version> <!-- Use latest version -->
     </dependency>
+    <!--
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
+    -->
   </dependencies>
 </project>

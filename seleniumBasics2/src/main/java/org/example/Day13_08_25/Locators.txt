@@ -51,3 +51,26 @@ Dynamic Elements: xpath
 5. Hybrid
 //TagName[contains(@Att1, 'Partial Value') and starts-with(text(), 'Starting Value')]
 //TagName[contains(@Att1, 'Partial Value') or starts-with(@Att2, 'Starting Value')]
+
+CSS Selectors
+1. Using partial value of attribute (Symbol – *)
+Example: TagName[Att1*='Partial Value']
+
+2. Using starting value of attribute (Symbol ^)
+Example: TagName[Att1^='Starting Value']
+
+3. Using ending value of attribute (Symbol $)
+Example: TagName[Att1$='Ending Value']
+
+4. ANDING the Attributes (No Symbol Required)
+Syntax: TagName[Att1=Value][Att2=Value]
+
+5. ORING the Attributes (',' will work as 'OR')
+Syntax: TagName[Att1=Value], TagName[Att2=Value]
+
+Using only TagName and Attribute Name ->
+Node1,Node2 => Matches all Node1s and Node2s
+Node1 Node2 => Matches all Node2s which are descendant of Node1
+Node1>Node2 => Matches all Node2s which are children of Node1
+Node1+Node2 => Matches sibling Node2 placed immediately after Node1
+Node1~Node2 => Matches all sibling Node2s placed after Node1

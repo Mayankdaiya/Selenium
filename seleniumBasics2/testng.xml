@@ -1,22 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Functional Testing" verbose="1">
-<!--  adding parameters  -->
-    <parameter name="browser"  value="chrome"/>
-    <parameter name="platform"  value="windows"/>
 
     <test name="Functional Test">
-        <!--  grouping -->
-        <groups>
-            <run>
-                <include name="Sanity"/>
-                <include name="Smoke"/>
-            </run>
-        </groups>
         <classes>
-<!--            <class name="org.example.Day_16_08_25.groupsTestNG"/>-->
-            <class name="org.example.Day_16_08_25.parameterisedTestNG"/>
-            <class name="org.example.Day_16_08_25.LabsessionGroups2"/>
+            <class name="org.example.Day_18_08_25.Labsession_testng"/>
         </classes>
     </test>
 </suite>

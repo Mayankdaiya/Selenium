@@ -1,4 +1,4 @@
-package org.example.Day_16_08_25;
+package org.example;
 import org.testng.TestNG;
 import java.util.Collections;
 

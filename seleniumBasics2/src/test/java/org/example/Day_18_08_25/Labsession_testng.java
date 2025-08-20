@@ -6,8 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import javax.naming.Name;
 import java.io.File;
 import java.time.Duration;
 
@@ -26,7 +28,7 @@ public class Labsession_testng {
         }
     }
 
-    @Test (groups = {"Form Filling and Submission"}, priority = 3)
+    @Test (enabled = false, groups = {"Form Filling and Submission"}, priority = 3)
     public static void formFilling() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -72,8 +74,9 @@ public class Labsession_testng {
 
     }
 
-    @Test (groups = {"Login Automation"}, priority = 0)
-    public static void loginAutomation() throws InterruptedException {
+    @Test (groups = {"Login Automation", "Automation"}, priority = 0)
+    @Parameters({"name", "password"})
+    public static void loginAutomation(String Name, String Password) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://practicetestautomation.com/practice-test-login/");
@@ -98,7 +101,7 @@ public class Labsession_testng {
         clickEvent(driver, "//a[normalize-space()='Log out']","");
         // Check for invalid username
         // username
-        clickEvent(driver,"//input[@id='username']", "student2");
+        clickEvent(driver,"//input[@id='username']", Name);
         // password
         clickEvent(driver,"//input[@id='password']","Password123");
         // enter submit
@@ -115,7 +118,7 @@ public class Labsession_testng {
         // username
         clickEvent(driver,"//input[@id='username']", "student");
         // password
-        clickEvent(driver,"//input[@id='password']","Password3");
+        clickEvent(driver,"//input[@id='password']",Password);
         // enter submit
         clickEvent(driver, "//button[@id='submit']", "");
         // check login status
@@ -184,7 +187,7 @@ public class Labsession_testng {
         clickEvent(driver, "//button[@id='booking']", "");
     }
 
-    @Test (groups = {"Cart Automation"}, priority = 1)
+    @Test (dependsOnMethods = {"bookingHotel"}, groups = {"Cart Automation", "Automation"}, priority = 1)
     public static void cartAutomation() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();

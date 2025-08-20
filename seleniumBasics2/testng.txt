@@ -23,3 +23,25 @@ Day 16_08_25
     </test>
 </suite>
 
+
+Day 18-08025 lab session
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Functional Testing" verbose="1">
+
+    <parameter name="name" value="Mayank"/>
+    <parameter name="password" value="pass@123"/>
+
+    <test name="Functional Test">
+        <groups>
+            <run>
+                <include name="Automation"/>
+                <include name="Form Filling and Submission"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.example.Day_18_08_25.Labsession_testng"/>
+        </classes>
+    </test>
+</suite>
+

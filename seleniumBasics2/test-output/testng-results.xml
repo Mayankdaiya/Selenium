@@ -1,40 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-18T17:15:12 IST" name="Functional Testing" finished-at="2025-08-18T17:17:50 IST" duration-ms="157488">
+  <suite started-at="2025-08-19T08:51:40 IST" name="Functional Testing" finished-at="2025-08-19T08:52:21 IST" duration-ms="41537">
     <groups>
-      <group name="End-to-End Booking Flow for Hotel">
-        <method signature="Labsession_testng.bookingHotel()[pri:2, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" name="bookingHotel" class="org.example.Day_18_08_25.Labsession_testng"/>
-      </group> <!-- End-to-End Booking Flow for Hotel -->
+      <group name="Automation">
+        <method signature="Labsession_testng.loginAutomation()[pri:0, instance:org.example.Day_18_08_25.Labsession_testng@2d127a61]" name="loginAutomation" class="org.example.Day_18_08_25.Labsession_testng"/>
+        <method signature="Labsession_testng.cartAutomation()[pri:1, instance:org.example.Day_18_08_25.Labsession_testng@2d127a61]" name="cartAutomation" class="org.example.Day_18_08_25.Labsession_testng"/>
+      </group> <!-- Automation -->
       <group name="Login Automation">
-        <method signature="Labsession_testng.loginAutomation()[pri:0, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" name="loginAutomation" class="org.example.Day_18_08_25.Labsession_testng"/>
+        <method signature="Labsession_testng.loginAutomation()[pri:0, instance:org.example.Day_18_08_25.Labsession_testng@2d127a61]" name="loginAutomation" class="org.example.Day_18_08_25.Labsession_testng"/>
       </group> <!-- Login Automation -->
-      <group name="Form Filling and Submission">
-        <method signature="Labsession_testng.formFilling()[pri:3, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" name="formFilling" class="org.example.Day_18_08_25.Labsession_testng"/>
-      </group> <!-- Form Filling and Submission -->
       <group name="Cart Automation">
-        <method signature="Labsession_testng.cartAutomation()[pri:1, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" name="cartAutomation" class="org.example.Day_18_08_25.Labsession_testng"/>
+        <method signature="Labsession_testng.cartAutomation()[pri:1, instance:org.example.Day_18_08_25.Labsession_testng@2d127a61]" name="cartAutomation" class="org.example.Day_18_08_25.Labsession_testng"/>
       </group> <!-- Cart Automation -->
     </groups>
-    <test started-at="2025-08-18T17:15:12 IST" name="Functional Test" finished-at="2025-08-18T17:17:50 IST" duration-ms="157488">
+    <test started-at="2025-08-19T08:51:40 IST" name="Functional Test" finished-at="2025-08-19T08:52:21 IST" duration-ms="41537">
       <class name="org.example.Day_18_08_25.Labsession_testng">
-        <test-method signature="loginAutomation()[pri:0, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" started-at="2025-08-18T17:15:12 IST" name="loginAutomation" finished-at="2025-08-18T17:15:27 IST" duration-ms="14331" status="PASS">
+        <test-method signature="loginAutomation()[pri:0, instance:org.example.Day_18_08_25.Labsession_testng@2d127a61]" started-at="2025-08-19T08:51:40 IST" name="loginAutomation" finished-at="2025-08-19T08:51:58 IST" duration-ms="18296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAutomation -->
-        <test-method signature="cartAutomation()[pri:1, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" started-at="2025-08-18T17:15:27 IST" name="cartAutomation" finished-at="2025-08-18T17:15:47 IST" duration-ms="20689" status="PASS">
+        <test-method signature="cartAutomation()[pri:1, instance:org.example.Day_18_08_25.Labsession_testng@2d127a61]" started-at="2025-08-19T08:51:58 IST" name="cartAutomation" finished-at="2025-08-19T08:52:21 IST" duration-ms="23072" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cartAutomation -->
-        <test-method signature="bookingHotel()[pri:2, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" started-at="2025-08-18T17:15:47 IST" name="bookingHotel" finished-at="2025-08-18T17:16:39 IST" duration-ms="51795" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bookingHotel -->
-        <test-method signature="formFilling()[pri:3, instance:org.example.Day_18_08_25.Labsession_testng@5cdd8682]" started-at="2025-08-18T17:16:39 IST" name="formFilling" finished-at="2025-08-18T17:17:50 IST" duration-ms="70559" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- formFilling -->
       </class> <!-- org.example.Day_18_08_25.Labsession_testng -->
     </test> <!-- Functional Test -->
   </suite> <!-- Functional Testing -->

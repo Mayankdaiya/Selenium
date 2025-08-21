@@ -1,31 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<!--        parallel="classes" thread-count="2"-->
+
 <suite name="Functional Testing" verbose="1">
 
     <test name="Functional Test">
         <classes>
-<!--            <class name="org.example.Day_19_08_25.paralledmethods"/>-->
-<!--            <class name="org.example.Day_19_08_25.parallelclasses"/>-->
-<!--            <class name="org.example.Day_19_08_25.annotationsExmp"/>-->
-            <class name="org.example.Day_19_08_25.customLogs"/>
+<!--            <class name="org.example.Day_20_08_25.dataProviders"/>-->
+            <class name="org.example.Day_20_08_25.loggerTestcases"/>
         </classes>
     </test>
 </suite>
-
-<!--<suite name="Functional Testing" verbose="1">-->
-
-<!--    <parameter name="name" value="Mayank"/>-->
-<!--    <parameter name="password" value="pass@123"/>-->
-
-<!--    <test name="Functional Test">-->
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="Automation"/>-->
-<!--                <include name="Form Filling and Submission"/>-->
-<!--            </run>-->
-<!--        </groups>-->
-<!--        <classes>-->
-<!--            <class name="org.example.Day_18_08_25.Labsession_testng"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--</suite>-->

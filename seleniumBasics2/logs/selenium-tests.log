@@ -1,0 +1,10 @@
+2025-08-20 10:50:30 [main] INFO  loggerTestcases - Invoking the browser
+2025-08-20 10:50:35 [main] INFO  loggerTestcases - Maximizing the browser window
+2025-08-20 10:50:44 [main] INFO  loggerTestcases - Invoking the browser
+2025-08-20 10:50:44 [main] INFO  loggerTestcases - Entering the username
+2025-08-20 10:50:46 [main] INFO  loggerTestcases - Entering the password
+2025-08-20 10:52:52 [main] INFO  loggerTestcases - Invoking the browser -> internet_herokuapp
+2025-08-20 10:52:57 [main] INFO  loggerTestcases - Maximizing the browser window -> internet_herokuapp
+2025-08-20 10:53:06 [main] INFO  loggerTestcases - Invoking the browser -> orangeHRM
+2025-08-20 10:53:06 [main] INFO  loggerTestcases - Entering the username in orangeHRM
+2025-08-20 10:53:08 [main] INFO  loggerTestcases - Entering the password in orangeHRM

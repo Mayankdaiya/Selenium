@@ -14,13 +14,15 @@ public class loggerTestcases {
 //    private static final Logger log = LogManager.getLogger(TestNGTestcase.class);
 
     @Test
-    public void launchbrowser() {
+    public void launchbrowser() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
         log.info("Invoking the browser -> internet_herokuapp");
         driver.get("https://the-internet.herokuapp.com/windows");
         log.info("Maximizing the browser window -> internet_herokuapp");
         driver.manage().window().maximize();
+        Thread.sleep(1000);
+        driver.quit();
     }
 
     @Test
@@ -28,7 +30,7 @@ public class loggerTestcases {
         WebDriver driver = new ChromeDriver();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         log.info("Invoking the browser -> orangeHRM");
         WebElement username = driver.findElement(By.name("username"));
 
@@ -46,5 +48,6 @@ public class loggerTestcases {
         driver.findElement(By.xpath("//button[@type = 'submit']")).click();
 
         Thread.sleep(2000);
+        driver.quit();
     }
 }

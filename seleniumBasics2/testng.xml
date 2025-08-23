@@ -5,7 +5,8 @@
     <test name="Functional Test">
         <classes>
 <!--            <class name="org.example.Day_20_08_25.dataProviders"/>-->
-            <class name="org.example.Day_20_08_25.loggerTestcases"/>
+<!--            <class name="org.example.Day_20_08_25.loggerTestcases"/>-->
+            <class name="org.example.Day_19_08_25.paralledmethods"/>
         </classes>
     </test>
 </suite>

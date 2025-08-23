@@ -1,0 +1,65 @@
+1. create maven archtype project having archtype quickstart
+2. Add plugins -> cucumber for java, gherkin
+3. Add dependencies cucumber java and junit
+4. create two packages with files inside src/test/java ->
+	StepDefinitions/StepDefinitions.java  -> your package whole files will going to run
+	TestRunner/MyTestRunner.java   ->main file to excecute your code
+5. create resources folder inside src/test
+	resources/Feature/login.feature  -> business features in gherkin syntax
+6. Add login-features in login.feauture file
+7. run this file and get the scenerio code from console 
+   and paste it in StepDefinitions.java
+8. keep your technical code separate, create logic.java in main/java/pages
+	where your main code lies (pom).
+9. then call this logic.java class inside StepDefinitions file and run methods of logic.
+10. Add this below code in TestRunner.java and run it
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "src/test/resources/Features",
+        glue = "StepDefinitions",   // <--- match your step definition package
+        plugin = {"pretty", "html:target/cucumber-reports"},
+        monochrome = true
+)
+
+General Notes	 
+1. for parameters to be pass from login.feature file
+   in feature -> @When user enters the username "<username>"
+   in stepDefi-> @When("user enters the username {string}")
+
+2. you can also create Hooks package and Hooks.java inside it
+   Hooks in Cucumber are special methods that run automatically before or after each scenario or step. They help manage the test lifecycle.
+
+Types of Hooks: @Before – Runs before each scenario, @After – Runs after each scenario
+@BeforeStep / @AfterStep – (Optional) Run before/after each step
+
+Common Uses: Launch and quit browser, Take screenshots on failure, Set up or clean test data
+EXP -> 
+public class Hooks {
+    // Inject WebDriver from DriverFactory
+    @Before
+    public void setUp() {
+        DriverFactory.getDriver();
+        System.out.println("Browser launched before scenario");
+    }
+
+    @After
+    public void tearDown(Scenario scenario) {
+        WebDriver driver = DriverFactory.getDriver();
+        if(scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "Failed Screenshot");
+        }
+        DriverFactory.quitDriver();
+        System.out.println("Browser closed after the scenario");
+    }
+
+}
+
+3. DriverFactory.java inside main/java/utils package 
+~DriverFactory is a custom utility class that creates and provides 
+ access to the WebDriver instance used in your test steps.
+Why we use
+Centralized WebDriver Management, Reuse Across Step Definitions
+Cleaner Step Definition, Support for Parallel Testing, Easier Maintenance
+
+

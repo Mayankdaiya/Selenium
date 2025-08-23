@@ -1,0 +1,107 @@
+Create file "log4j2.xml" in test>resources and add this configuration data into it
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <!-- Console Logger -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n"/>
+        </Console>
+
+        <!-- File Logger -->
+        <File name="FileLogger" fileName="logs/selenium-tests.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>
+
+Add log4j2(core+api) dependencies into pom.xml
+<!-- Log4j2 Core -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.23.1</version>
+    </dependency>
+    <!-- Log4j2 API -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.23.1</version>
+    </dependency>
+
+now declare a file in projectfolder>logs>selenium-tests.log
+
+now create "loggerHelper" to generate reports into package and another "loggerTestcases" for test 
+package org.example.Day_20_08_25;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class loggerHelper {
+    public static Logger getLogger(Class<?> cls) {
+        return LogManager.getLogger(cls);
+    }
+}
+
+package org.example.Day_20_08_25;
+
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class loggerTestcases {
+    // Annotations we can control the flow of execution
+    private static final Logger log = loggerHelper.getLogger(loggerTestcases.class);
+
+    @Test
+    public void launchbrowser() {
+        WebDriver driver = new ChromeDriver();
+
+        log.info("Invoking the browser -> internet_herokuapp");
+        driver.get("https://the-internet.herokuapp.com/windows");
+        log.info("Maximizing the browser window -> internet_herokuapp");
+        driver.manage().window().maximize();
+    }
+
+    @Test
+    public void login() throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
+        Thread.sleep(2000);
+        log.info("Invoking the browser -> orangeHRM");
+        WebElement username = driver.findElement(By.name("username"));
+
+        log.info("Entering the username in orangeHRM");
+        username.sendKeys("Admin");
+        Thread.sleep(2000);
+
+        // enter text in password field
+        log.info("Entering the password in orangeHRM");
+        driver.findElement(By.xpath("//input[@name = 'password']"))
+                .sendKeys("admin123");
+
+        // click on login button
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@type = 'submit']")).click();
+
+        Thread.sleep(2000);
+    }
+}
+
+now add this class to testng.xml and run it will generate log reports into the specified file
+
+~Benefits of this logging setup:
+Easy to track what happened during test execution
+Separate logs for each run or per test suite
+No need for System.out.println
+Helps with CI/CD debugging (especially in Jenkins or cloud pipelines)

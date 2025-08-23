@@ -1,0 +1,20 @@
+Selenium Grid Setup
+
+1.Downlaod the selenium-server.jar file from https://www.selenium.dev/downloads/
+ 
+2. Place it in a folder
+ 
+3.If you just want a single-machine setup start the hub
+ 
+java -jar selenium-server-4.33.0.jar hub  -> its working 
+java -jar selenium-server-4.33.0.jar standalone
+ 
+4.Opens Grid Console at → http://localhost:4444/ui
+ 
+Runs hub + node in the same process
+ 
+http://localhost:4444
+ 
+5. start the node
+ 
+java -jar selenium-server-4.33.0.jar node --detect-drivers true --publish-events tcp://<localhost>:4442 --subscribe-events tcp://<localhost>:4443

@@ -3,7 +3,11 @@ package pages;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Map;
 
 public class practiceformsubmit {
@@ -65,6 +69,8 @@ public class practiceformsubmit {
 
     public void submitForm() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(esubmit).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(esubmit));
+//        driver.findElement().click();
     }
 }

@@ -5,6 +5,7 @@
     <test name="RunCucumberTests">
         <classes>
             <class name="TestRunner.TestRunnerForDemoguru"/>
+            <class name="TestRunner.TestRunnerForTutorialspoint"/>
         </classes>
     </test>
 </suite>
